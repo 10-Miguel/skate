@@ -18,7 +18,6 @@ import java.util.Scanner;
 // 14. Encontrar el número mayor dentro de un arreglo usando un ciclo for.
 // 15. Encontrar el número menor dentro de un arreglo usando un ciclo for.
 // 16. Contar cuántas veces aparece un número específico en un arreglo usando un ciclo for.
-// 17. Imprimir un triángulo de asteriscos de altura 5 usando ciclos for anidados.
 // 18. Imprimir un cuadrado de 6x6 asteriscos usando ciclos for anidados.
 // 19. Mostrar los primeros 20 números y su cubo usando un ciclo for.
 // 20. Recorrer una cadena de texto e imprimir cada carácter usando un ciclo for.
@@ -58,10 +57,13 @@ public class BuclesCiclos {
         if (Ejercicio == 2) {
             System.out.println("2. Mostrar los números del 50 al 1 usando un ciclo for.");
             System.out.println("Ingreso al Ejercicio 2");
+            for (int i = 50; i >= 1; i--) {
+                System.out.println("Numero " + i);
+            }
 
         }
         if (Ejercicio == 3) {
-             System.out.println("Ingreso al Ejercicio 3");
+            System.out.println("Ingreso al Ejercicio 3");
 
         }
         if (Ejercicio == 4) {
@@ -88,7 +90,8 @@ public class BuclesCiclos {
 
         }
         if (Ejercicio == 10) {
-            System.out.println("10. Mostrar los números del 1 al 100 que sean divisibles entre 3 y 5 usando un ciclo for.");
+            System.out.println(
+                    "10. Mostrar los números del 1 al 100 que sean divisibles entre 3 y 5 usando un ciclo for.");
             System.out.println("Ingreso al Ejercicio 10");
 
             for (int i = 0; i <= 100; i++) {
@@ -100,19 +103,34 @@ public class BuclesCiclos {
         }
 
         if (Ejercicio == 11) {
-            System.out.println("11. Calcular el factorial de un número almacenado en una variable usando un ciclo for.");
+            System.out
+                    .println("11. Calcular el factorial de un número almacenado en una variable usando un ciclo for.");
             System.out.println("Ingreso al Ejercicio 11");
             System.out.println("Ingrese el numero para sacar el factorial");
             int Factorial = lector.nextInt();
-            System.out.println("Vamos a sacar el factorial del numero"+Factorial);
-            for (int i = 2; i <=Factorial ; i++) {
-               Factorial=Factorial*i;
+            System.out.println("Vamos a sacar el factorial del numero" + Factorial);
+            for (int i = 2; i <= Factorial; i++) {
+                Factorial = Factorial * i;
             }
-            System.out.println("El Factorial del numero ingresa es "+Factorial);
+            System.out.println("El Factorial del numero ingresa es " + Factorial);
 
         }
         if (Ejercicio == 12) {
+            System.out.println("12. Recorrer un arreglo de 10 números e imprimir cada elemento usando un ciclo for.");
             System.out.println("Ingreso al Ejercicio 12");
+            int[] arreglo = new int[10];
+
+            System.out.println("Vamos a llenar el vector");
+
+            for (int j = 0; j < arreglo.length; j++) {
+                System.out.println("Ingrese el valor del arreglo en la posicion " + j);
+                arreglo[j] = lector.nextInt();
+            }
+
+            System.out.println("Vamos a recorrer el arreglo");
+            for (int i = 0; i < arreglo.length; i++) {
+                System.out.println(arreglo[i]);
+            }
 
         }
         if (Ejercicio == 13) {
@@ -122,30 +140,42 @@ public class BuclesCiclos {
         if (Ejercicio == 14) {
             System.out.println("14. Encontrar el número mayor dentro de un arreglo usando un ciclo for.");
             System.out.println("Ingreso al Ejercicio 14");
-             int [] Vector = {1,2,3,4};
-             int Mayor=0;
-             for(int i = 0 ; i<= Vector.length;i ++){
-                 if (Vector[i]>Mayor){
-                     Mayor = Vector[i];
-                 }
-             }
+            int[] Vector = { 1, 2, 3, 4 };
+            int Mayor = 0;
+            for (int i = 0; i <= Vector.length; i++) {
+                if (Vector[i] > Mayor) {
+                    Mayor = Vector[i];
+                }
+            }
 
         }
+
         if (Ejercicio == 15) {
-            System.out.println("1. Imprimir los números del 1 al 50 usando un ciclo for.");
+            System.out.println("15. Encontrar el número menor dentro de un arreglo usando un ciclo for.");
             System.out.println("Ingreso al Ejercicio 15");
-            if (Ejercicio == 14) {
-                System.out.println("14. Encontrar el número mayor dentro de un arreglo usando un ciclo for.");
-                System.out.println("Ingreso al Ejercicio 14");
-                int [] Vector = {1,2,3,4};
-                int Mayor=0;
-                for(int i = 0 ; i<= Vector.length;i ++){
-                    if (Vector[i]<Mayor){
-                        Mayor = Vector[i];
-                    }
+
+            System.out.println("Ingrese el tamano del vector");
+            int tamano =lector.nextInt();
+
+            int [] vector =new int [tamano];
+
+            System.out.println("Vamos Llenar los datos del vector");
+
+            for(int i =0 ;i<vector.length;i++){
+                System.out.println("Ingreso valor Vector en posicion "+i);
+                vector[i]=lector.nextInt();
+            }
+
+            int menor =999999999;
+
+            for (int j =0;j<vector.length;j++){
+                System.out.println(vector[j]);
+                if (menor>vector[j]){
+                    menor = vector[j];
                 }
 
             }
+            System.out.println("La posicion menor del vector es "+menor);
 
         }
         if (Ejercicio == 1) {
@@ -167,27 +197,25 @@ public class BuclesCiclos {
             System.out.println("17. Imprimir un triángulo de asteriscos de altura 5 usando ciclos for anidados.");
             System.out.println("Ingreso al Ejercicio 17");
             System.out.println("Imprimiendo Triangulo");
-            String [] vector  ={"*","*","*","*","*"} ;
-                for (int j = 1; j <= vector.length; j++) {
-                    for (int z = 1; z <= j; z++) {
-                        System.out.print(vector[j]);
-                    }
-                    System.out.println();
+            String[] vector = { "*", "*", "*", "*", "*" };
+            for (int j = 1; j <= vector.length; j++) {
+                for (int z = 1; z <= j; z++) {
+                    System.out.print(vector[j]);
                 }
-
+                System.out.println();
+            }
 
         }
         if (Ejercicio == 18) {
             System.out.println("18. Imprimir un cuadrado de 6x6 asteriscos usando ciclos for anidados.");
             System.out.println("Ingreso al Ejercicio 18");
 
-            for (int i = 1 ; i<=6 ;i++){
-                for (int j =0 ; j<6;j++){
+            for (int i = 1; i <= 6; i++) {
+                for (int j = 0; j < 6; j++) {
                     System.out.print("*");
                 }
                 System.out.println();
             }
-
 
         }
         if (Ejercicio == 19) {
@@ -201,22 +229,19 @@ public class BuclesCiclos {
             System.out.println("20. Recorrer una cadena de texto e imprimir cada carácter usando un ciclo for.");
             System.out.println("Ingreso al Ejercicio 20");
             System.out.println("Ingrese una cadena de texto para imprimirla");
-            String Cadena =lector.next();
+            String Cadena = lector.next();
 
-            int Tamano= Cadena.length();
-            System.out.println("Vamos imprimir la cadena "+ Cadena);
-            for (int i =0 ;i<=Tamano; i ++){
+            int Tamano = Cadena.length();
+            System.out.println("Vamos imprimir la cadena " + Cadena);
+            for (int i = 0; i <= Tamano; i++) {
                 System.out.println(Cadena.charAt(i));
             }
 
-
         }
-
 
         if (Ejercicio > 20 || Ejercicio < 1) {
             System.out.println("Ingreso una Opcion No Validad");
         }
-
 
     }
 }
