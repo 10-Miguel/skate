@@ -1,6 +1,7 @@
 import EjerciciosCiclosBucles.BuclesCiclos;
 import EjerciciosCondicionales.EjerciciosCondicionales;
 
+import javax.swing.*;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
@@ -18,6 +19,8 @@ public class Main {
         System.out.println("5.Ejercicios Basicos POO");
         System.out.println("6.POO con Conexion a Base De Datos");
         System.out.println("Ingrese una opcion");
+
+        JOptionPane.showInputDialog("Hola Mundo ");
 
         Scanner lector =new Scanner(System.in);
         int opcion = lector.nextInt();
