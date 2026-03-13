@@ -9,53 +9,49 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Bienvenido A Programando Ando");
-        System.out.println("Aqui Aprenderemos a Programar Con Java");
-        System.out.println("Lista De Ejercicios");
-        System.out.println("1.Condicionales");
-        System.out.println("2.Ciclos y Bucles");
-        System.out.println("3.Switch");
-        System.out.println("4.Do-While");
-        System.out.println("5.Ejercicios Basicos POO");
-        System.out.println("6.POO con Conexion a Base De Datos");
-        System.out.println("Ingrese una opcion");
 
-        JOptionPane.showInputDialog("Hola Mundo ");
+        String selecion = (JOptionPane.showInputDialog(
+                "Bienvenido A Programando Ando\n" +
+                        "Aquí Aprenderemos a Programar Con Java\n\n" +
+                        "Lista De Ejercicios\n" +
+                        "1. Condicionales\n" +
+                        "2. Ciclos y Bucles\n" +
+                        "3. Switch\n" +
+                        "4. Do-While\n" +
+                        "5. Ejercicios Básicos POO\n" +
+                        "6. POO con Conexión a Base De Datos\n\n" +
+                        "Ingrese una opción:"));
 
-        Scanner lector =new Scanner(System.in);
-        int opcion = lector.nextInt();
+        int opcion = Integer.parseInt(selecion);
 
-        if(opcion==1){
+        if (opcion == 1) {
             System.out.println("1.Ingresando a Ejercicios Con Condicionales");
-            EjerciciosCondicionales ejerciciosCondicionales=new EjerciciosCondicionales();
+            EjerciciosCondicionales ejerciciosCondicionales = new EjerciciosCondicionales();
         }
-        if(opcion==2){
+        if (opcion == 2) {
             System.out.println("2.Ingresando a Ejercicios Con Ciclos y Bucles");
-            BuclesCiclos Ciclos=new BuclesCiclos();
+            BuclesCiclos Ciclos = new BuclesCiclos();
         }
 
-        if(opcion==3){
+        if (opcion == 3) {
             System.out.println("3.Ingresando a Ejercicios Con Switch");
         }
 
-        if(opcion==4){
+        if (opcion == 4) {
             System.out.println("4.Ingresando a Ejercicios Con Do-While");
         }
 
-        if(opcion==5){
+        if (opcion == 5) {
             System.out.println("5.Ingresando a Ejercicios Basicos POO");
         }
 
-        if(opcion==6){
+        if (opcion == 6) {
             System.out.println("6.Ingresando a Ejercicios Con POO con Conexion a Base De Datos");
         }
 
-        if(opcion<0 || opcion>6){
+        if (opcion < 0 || opcion > 6) {
             System.out.println("Ingreso una Opcion Invalidad");
         }
 
-        lector.close();
-
-
-        }
     }
+}

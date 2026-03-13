@@ -111,6 +111,8 @@ Imprima:
 
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 /*
 ========================================
 EJERCICIO 9 - Sistema de login
@@ -148,32 +150,38 @@ Menor a 18.5 → Bajo peso
 public class EjerciciosCondicionales {
 
     public EjerciciosCondicionales() {
-        Scanner lector = new Scanner(System.in);
 
-        System.out.println("EJERCICIO 1 - Número positivo, negativo o cero");
-        System.out.println("EJERCICIO 2 - Número par o impar");
-        System.out.println("EJERCICIO 3 - Mayor de edad");
-        System.out.println("EJERCICIO 4 - Calculadora básica");
-        System.out.println("EJERCICIO 5 - Año bisiesto");
-        System.out.println("EJERCICIO 6 - Clasificación de nota");
-        System.out.println("EJERCICIO 7 - Número mayor entre tres");
-        System.out.println("EJERCICIO 8 - Descuento en tienda");
-        System.out.println("EJERCICIO 9 - Sistema de login");
-        System.out.println("EJERCICIO 10 - Cálculo de IMC");
-        System.out.println("Ingrese un ejercicio");
+        String Selecion = JOptionPane.showInputDialog(
+                "EJERCICIO 1 - Número positivo, negativo o cero\n" +
+                        "EJERCICIO 2 - Número par o impar\n" +
+                        "EJERCICIO 3 - Mayor de edad\n" +
+                        "EJERCICIO 4 - Calculadora básica\n" +
+                        "EJERCICIO 5 - Año bisiesto\n" +
+                        "EJERCICIO 6 - Clasificación de nota\n" +
+                        "EJERCICIO 7 - Número mayor entre tres\n" +
+                        "EJERCICIO 8 - Descuento en tienda\n" +
+                        "EJERCICIO 9 - Sistema de login\n" +
+                        "EJERCICIO 10 - Cálculo de IMC\n\n" +
+                        "Ingrese un ejercicio:");
 
-        int Ejercicios = lector.nextInt();
+        int Ejercicios = Integer.parseInt(Selecion);
 
         if (Ejercicios == 1) {
             System.out.println("EJERCICIO 1 - Número positivo, negativo o cero");
             System.out.println("Ingrese un numero Para determinar si es Negativo o Positivo");
-            int numero = lector.nextInt();
+            int numero = Integer.parseInt(
+                    JOptionPane.showInputDialog("Ingrese un numero Para determinar si es Negativo o Positivo"));
+
             if (numero > 0) {
-                System.out.println("Numero es positivo " + numero);
+                JOptionPane.showMessageDialog(null, "Numero es positivo " + numero);
+
             } else if (numero < 0) {
-                System.out.println("Numero es Negativo " + numero);
+                JOptionPane.showMessageDialog(null, "Numero es Negativo " + numero);
+
             } else {
-                System.out.println("Numero Ingresado es Cero " + numero);
+
+                JOptionPane.showMessageDialog(null, "Numero Ingresado es Cero " + numero);
+
             }
         }
         if (Ejercicios == 2) {
@@ -200,46 +208,6 @@ public class EjerciciosCondicionales {
             // Inicio Desarrollo Ejercicio 8
         }
 
-        if (Ejercicios == 9) {
-            // Inicio Desarrollo Ejercicio 9
-            System.out.println("EJERCICIO 9 - Sistema de login");
-            System.out.println("Vamos A Crear el usuario");
-            System.out.println("Cree un Usuario");
-            System.out.println("Nombre del usuario a crear");
-            String user = lector.next();
-            System.out.println("El usuario creado es " + user);
-            System.out.println("Determine un contrasna Para el " + user);
-            int password = lector.nextInt();
-            System.out.println("Contrasena Establecida");
-
-            System.out.println("Vamos a hacer login");
-            System.out.println("Ingrese el usuario");
-            boolean valideUser = true;
-
-            if (valideUser) {
-
-                String us = lector.next();
-
-                if (user.contains(us)) {
-                    System.out.println("Usuario Correcto");
-                    System.out.println("Ingrese la contrasena");
-                    int pas = lector.nextInt();
-                    if (pas == password) {
-                        System.out.println("Contrasena Correcta");
-                        System.out.println("Bievenido al sistema");
-                    } else {
-                        System.out.println("PassWord Incorrecto");
-                        System.out.println("Terminando programa");
-                    }
-
-                } else {
-                    System.out.println("Usuario Incorrecto");
-                    System.out.println("Terminando programa");
-                }
-
-            }
-
-        }
         if (Ejercicios == 10) {
             // Inicio Desarrollo Ejercicio 10
         }
