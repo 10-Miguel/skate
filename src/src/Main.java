@@ -4,6 +4,9 @@ import databaseConexion.ConexionDb;
 import databaseConexion.InicializarDb;
 
 import javax.swing.*;
+
+import CrudRestaurante.MenuRestaurante;
+
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
@@ -31,27 +34,14 @@ public class Main {
             System.out.println("2.Ingresando a Ejercicios Con Ciclos y Bucles");
             BuclesCiclos Ciclos = new BuclesCiclos();
         }
-
         if (opcion == 3) {
-            System.out.println("3.Ingresando a Ejercicios Con Switch");
-        }
-
-        if (opcion == 4) {
-            System.out.println("4.Ingresando a Ejercicios Con Do-While");
-        }
-
-        if (opcion == 5) {
-            System.out.println("5.Ingresando a Ejercicios Basicos POO");
-        }
-
-        if (opcion == 6) {
-            System.out.println("6.Ingresando a Ejercicios Con POO con Conexion a Base De Datos");
-            InicializarDb inicializarDb = new InicializarDb();
-            inicializarDb.crearTablas();
+            System.out.println("3.Ingresando a Ejercicios Con POO con Conexion a Base De Datos");
+            MenuRestaurante menuRestaurante = new MenuRestaurante();
+             menuRestaurante.iniciar();
 
         }
 
-        if (opcion < 0 || opcion > 6) {
+        if (opcion < 0 || opcion >3) {
             System.out.println("Ingreso una Opcion Invalidad");
         }
 
