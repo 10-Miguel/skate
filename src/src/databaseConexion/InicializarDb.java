@@ -10,8 +10,8 @@ public class InicializarDb {
         String sql = """
                 CREATE TABLE IF NOT EXISTS productos (
                     id      INTEGER PRIMARY KEY AUTOINCREMENT,
-                    nombre  TEXT    NOT NULL,
-                    precio  REAL    NOT NULL,
+                    marca  TEXT    NOT NULL,
+                    precio  TEXT    NOT NULL,
                     cantidad INTEGER NOT NULL
                 );
                 """;

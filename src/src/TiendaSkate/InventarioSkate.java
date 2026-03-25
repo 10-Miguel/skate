@@ -1,9 +1,9 @@
-package CrudRestaurante;
+package TiendaSkate;
 
 import javax.swing.JOptionPane;
 import java.sql.*;
 
-public class MenuRestaurante {
+public class InventarioSkate {
 
     static String URL = "jdbc:sqlite:mibasededatos.db";
 
@@ -16,8 +16,8 @@ public class MenuRestaurante {
     static void crearTabla() {
         String sql = "CREATE TABLE IF NOT EXISTS productos (" +
                      "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                     "nombre TEXT NOT NULL,"                 +
-                     "precio REAL NOT NULL,"                 +
+                     "marca TEXT NOT NULL,"                 +
+                     "precio TEXT NOT NULL,"                 +
                      "cantidad INTEGER NOT NULL)";
         try (Connection conn = conectar();
              Statement stmt = conn.createStatement()) {
@@ -29,15 +29,15 @@ public class MenuRestaurante {
 
     // CREATE - Agregar producto
     static void agregar() {
-        String nombre   = JOptionPane.showInputDialog("Nombre del producto:");
+        String marca   = JOptionPane.showInputDialog("Marca del producto:");
         String precio   = JOptionPane.showInputDialog("Precio:");
         String cantidad = JOptionPane.showInputDialog("Cantidad:");
 
-        String sql = "INSERT INTO productos (nombre, precio, cantidad) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO productos (marca, precio, cantidad) VALUES (?, ?, ?)";
         try (Connection conn = conectar();
              PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setString(1, nombre);
-            ps.setDouble(2, Double.parseDouble(precio));
+            ps.setString(1, marca);
+            ps.setString(2, precio);
             ps.setInt(3, Integer.parseInt(cantidad));
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Producto agregado!");
@@ -55,7 +55,7 @@ public class MenuRestaurante {
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
                 resultado += "ID: "       + rs.getInt("id")
-                           + " | "        + rs.getString("nombre")
+                           + " | "        + rs.getString("marca")
                            + " | $"       + rs.getDouble("precio")
                            + " | Stock: " + rs.getInt("cantidad") + "\n";
             }
@@ -68,14 +68,14 @@ public class MenuRestaurante {
     // UPDATE - Actualizar producto por ID
     static void actualizar() {
         String id       = JOptionPane.showInputDialog("ID del producto a actualizar:");
-        String nombre   = JOptionPane.showInputDialog("Nuevo nombre:");
+        String marca   = JOptionPane.showInputDialog("Nueva marca:");
         String precio   = JOptionPane.showInputDialog("Nuevo precio:");
         String cantidad = JOptionPane.showInputDialog("Nueva cantidad:");
 
-        String sql = "UPDATE productos SET nombre=?, precio=?, cantidad=? WHERE id=?";
+        String sql = "UPDATE productos SET marca=?, precio=?, cantidad=? WHERE id=?";
         try (Connection conn = conectar();
              PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setString(1, nombre);
+            ps.setString(1, marca);
             ps.setDouble(2, Double.parseDouble(precio));
             ps.setInt(3, Integer.parseInt(cantidad));
             ps.setInt(4, Integer.parseInt(id));
@@ -107,7 +107,7 @@ public class MenuRestaurante {
 
         while (!opcion.equals("5")) {
             opcion = JOptionPane.showInputDialog(
-                    "RESTAURANTE - Gestion de Productos\n\n" +
+                    "Skate Medellín - Gestion de Productos\n\n" +
                     "1. Agregar producto\n"    +
                     "2. Ver productos\n"       +
                     "3. Actualizar producto\n" +
