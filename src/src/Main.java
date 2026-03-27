@@ -1,16 +1,12 @@
 import EjerciciosCiclosBucles.BuclesCiclos;
 import EjerciciosCondicionales.EjerciciosCondicionales;
+import TiendaSkate.InventarioSkate;
 import databaseConexion.ConexionDb;
 import databaseConexion.InicializarDb;
-
 import javax.swing.JOptionPane;
 
-import TiendaSkate.InventarioSkate;
 
-import java.sql.SQLOutput;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 InicializarDb.crearTablas();
@@ -29,11 +25,11 @@ ConexionDb.getConexion();
         int opcion = Integer.parseInt(selecion);
 
         if (opcion == 1) {
-            System.out.println("1.Ingresando a Ejercicios Con Condicionales");
+            JOptionPane.showMessageDialog(null, "1.Ingresando a Ejercicios Con Condicionales");
             EjerciciosCondicionales ejerciciosCondicionales = new EjerciciosCondicionales();
         }
         if (opcion == 2) {
-            System.out.println("2.Ingresando a Ejercicios Con Ciclos y Bucles");
+            JOptionPane.showMessageDialog(null, "2.Ingresando a Ejercicios Con Ciclos y Bucles");
             BuclesCiclos Ciclos = new BuclesCiclos();
         }
         if (opcion == 3) {
@@ -43,7 +39,8 @@ ConexionDb.getConexion();
         }
 
         if (opcion < 0 || opcion >3) {
-            System.out.println("Ingrese una opción válida");
+            JOptionPane.showMessageDialog(null, "Opción no válida. Por favor, ingrese una opción entre 1 y 3.");
+
         }
 
     }
